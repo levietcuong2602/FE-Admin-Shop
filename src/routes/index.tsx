@@ -28,6 +28,9 @@ const BusinessWithRadioCardsPage = lazy(
   () => import(/* webpackChunkName: "with-aside" */ '@/pages/business/with-radio-cards'),
 );
 const BusinessWithTabsPage = lazy(() => import(/* webpackChunkName: "with-tabs" */ '@/pages/business/with-tabs'));
+const OrderPage = lazy(() => import(/* webpackChunkName: "orders" */ '@/pages/orders'));
+const ProductPage = lazy(() => import(/* webpackChunkName: "products" */ '@/pages/products'));
+const StockPage = lazy(() => import(/* webpackChunkName: "stocks" */ '@/pages/stocks'));
 
 const routeList: RouteObject[] = [
   {
@@ -45,6 +48,18 @@ const routeList: RouteObject[] = [
       {
         path: 'dashboard',
         element: <WrapperRouteComponent element={<Dashboard />} titleId="title.dashboard" />,
+      },
+      {
+        path: 'orders',
+        element: <WrapperRouteComponent element={<OrderPage />} titleId="title.orders" />,
+      },
+      {
+        path: 'products',
+        element: <WrapperRouteComponent element={<ProductPage />} titleId="title.products" />,
+      },
+      {
+        path: 'stocks',
+        element: <WrapperRouteComponent element={<StockPage />} titleId="title.stocks" />,
       },
       {
         path: 'documentation',
