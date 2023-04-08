@@ -69,11 +69,11 @@ new Array(30).fill(undefined).forEach((item, index) => {
   });
 });
 
-const ProductPage: FC = () => {
+const ManagementContainer: FC = () => {
   return (
     <div className="aaa">
       <MyTable<ColumnType> dataSource={data} rowKey={record => record.key} height="100%">
-        <Column title="Mã đơn hàng" dataIndex="orderId" key="orderId" />
+        <Column title="Mã sản phẩm" dataIndex="orderId" key="orderId" />
         <Column title="Tên sản phẩm" dataIndex="productName" key="productName" />
         <Column title="Đơn giá" dataIndex="unitPrice" key="unitPrice" />
         <Column title="Số lượng" dataIndex="quantity" key="quantity" width="75px" />
@@ -96,4 +96,4 @@ const ProductPage: FC = () => {
   );
 };
 
-export default ProductPage;
+export default ManagementContainer;
