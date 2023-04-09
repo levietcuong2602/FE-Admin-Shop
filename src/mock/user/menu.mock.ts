@@ -13,13 +13,39 @@ const mockMenuList: MenuList = [
     path: '/dashboard',
   },
   {
-    code: 'order',
+    code: 'transaction',
     label: {
       zh_CN: '首页',
-      en_US: 'Đơn hàng',
+      en_US: 'Giao dịch',
     },
-    icon: 'order',
-    path: '/orders',
+    icon: 'transaction',
+    path: '/transactions',
+    children: [
+      {
+        code: 'sale',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'Bán hàng',
+        },
+        path: '/transactions/sale',
+      },
+      {
+        code: 'buy',
+        label: {
+          zh_CN: '首页',
+          en_US: 'Nhập hàng',
+        },
+        path: '/transactions/buy',
+      },
+      {
+        code: 'revert',
+        label: {
+          zh_CN: '首页',
+          en_US: 'Trả hàng',
+        },
+        path: '/transactions/revert',
+      },
+    ],
   },
   {
     code: 'product',

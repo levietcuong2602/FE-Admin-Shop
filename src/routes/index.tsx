@@ -28,15 +28,27 @@ const BusinessWithRadioCardsPage = lazy(
   () => import(/* webpackChunkName: "with-aside" */ '@/pages/business/with-radio-cards'),
 );
 const BusinessWithTabsPage = lazy(() => import(/* webpackChunkName: "with-tabs" */ '@/pages/business/with-tabs'));
-const OrderPage = lazy(() => import(/* webpackChunkName: "orders" */ '@/pages/orders'));
-const ProductPage = lazy(() => import(/* webpackChunkName: "products" */ '@/pages/products'));
-const NativePage = lazy(() => import(/* webpackChunkName: "products/native" */ '@/pages/products/natives'));
-const ManagementPage = lazy(() => import(/* webpackChunkName: "products/management" */ '@/pages/products/management'));
-const TradeMarkedPage = lazy(
+
+const ProductNativePage = lazy(() => import(/* webpackChunkName: "products/native" */ '@/pages/products/natives'));
+const ProductManagementPage = lazy(
+  () => import(/* webpackChunkName: "products/management" */ '@/pages/products/management'),
+);
+const ProductTradeMarkedPage = lazy(
   () => import(/* webpackChunkName: "products/trademarked" */ '@/pages/products/trademarked'),
 );
-const CategoryPage = lazy(() => import(/* webpackChunkName: "products/trademarked" */ '@/pages/products/categories'));
-const StockPage = lazy(() => import(/* webpackChunkName: "stocks" */ '@/pages/stocks'));
+const ProductCategoryPage = lazy(
+  () => import(/* webpackChunkName: "products/trademarked" */ '@/pages/products/categories'),
+);
+
+const TransactionSalePage = lazy(
+  () => import(/* webpackChunkName: "transactions/sales" */ '@/pages/transactions/sale'),
+);
+const TransactionPurchasePage = lazy(
+  () => import(/* webpackChunkName: "transactions/purchases" */ '@/pages/transactions/purchase'),
+);
+const TransactionRevertPage = lazy(
+  () => import(/* webpackChunkName: "transactions/reverts" */ '@/pages/transactions/revert'),
+);
 
 const routeList: RouteObject[] = [
   {
@@ -56,32 +68,32 @@ const routeList: RouteObject[] = [
         element: <WrapperRouteComponent element={<Dashboard />} titleId="title.dashboard" />,
       },
       {
-        path: 'orders',
-        element: <WrapperRouteComponent element={<OrderPage />} titleId="title.orders" />,
+        path: 'transactions/sales',
+        element: <WrapperRouteComponent element={<TransactionSalePage />} titleId="title.transactions.sales" />,
       },
       {
-        path: 'products',
-        element: <WrapperRouteComponent element={<ProductPage />} titleId="title.products" />,
+        path: 'transactions/purchases',
+        element: <WrapperRouteComponent element={<TransactionPurchasePage />} titleId="title.transactions.purchases" />,
+      },
+      {
+        path: 'transactions/reverts',
+        element: <WrapperRouteComponent element={<TransactionRevertPage />} titleId="title.transactions.reverts" />,
       },
       {
         path: 'products/natives',
-        element: <WrapperRouteComponent element={<NativePage />} titleId="title.products.natives" />,
+        element: <WrapperRouteComponent element={<ProductNativePage />} titleId="title.products.natives" />,
       },
       {
         path: 'products/management',
-        element: <WrapperRouteComponent element={<ManagementPage />} titleId="title.products.management" />,
+        element: <WrapperRouteComponent element={<ProductManagementPage />} titleId="title.products.management" />,
       },
       {
         path: 'products/trademarked',
-        element: <WrapperRouteComponent element={<TradeMarkedPage />} titleId="title.products.trademarked" />,
+        element: <WrapperRouteComponent element={<ProductTradeMarkedPage />} titleId="title.products.trademarked" />,
       },
       {
         path: 'products/categories',
-        element: <WrapperRouteComponent element={<CategoryPage />} titleId="title.products.categories" />,
-      },
-      {
-        path: 'stocks',
-        element: <WrapperRouteComponent element={<StockPage />} titleId="title.stocks" />,
+        element: <WrapperRouteComponent element={<ProductCategoryPage />} titleId="title.products.categories" />,
       },
       {
         path: 'documentation',

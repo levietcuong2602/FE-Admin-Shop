@@ -5,10 +5,10 @@ import { ReactComponent as CustomerSvg } from '@/assets/menu/customer.svg';
 import { ReactComponent as DashboardSvg } from '@/assets/menu/dashboard.svg';
 import { ReactComponent as DocumentationSvg } from '@/assets/menu/documentation.svg';
 import { ReactComponent as GuideSvg } from '@/assets/menu/guide.svg';
-import { ReactComponent as OrderSvg } from '@/assets/menu/order.svg';
 import { ReactComponent as PermissionSvg } from '@/assets/menu/permission.svg';
 import { ReactComponent as ProductSvg } from '@/assets/menu/product.svg';
 import { ReactComponent as StockSvg } from '@/assets/menu/stock.svg';
+import { ReactComponent as TransactionSvg } from '@/assets/menu/transaction.svg';
 
 interface CustomIconProps {
   type: string;
@@ -34,8 +34,8 @@ export const CustomIcon: FC<CustomIconProps> = props => {
     case 'documentation':
       com = <DocumentationSvg />;
       break;
-    case 'order':
-      com = <OrderSvg />;
+    case 'transaction':
+      com = <TransactionSvg />;
       break;
     case 'product':
       com = <ProductSvg />;

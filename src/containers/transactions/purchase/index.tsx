@@ -71,7 +71,7 @@ new Array(30).fill(undefined).forEach((item, index) => {
   });
 });
 
-const OrderPage: FC = () => {
+const PurchasePage: FC = () => {
   const [confirmModal, contextHolderConfirmPayment] = Modal.useModal();
   const [removeModal, contextHolderRemovePayment] = Modal.useModal();
 
@@ -139,4 +139,4 @@ const OrderPage: FC = () => {
   );
 };
 
-export default OrderPage;
+export default PurchasePage;
