@@ -27,7 +27,7 @@ const mockMenuList: MenuList = [
           zh_CN: '路由权限',
           en_US: 'Bán hàng',
         },
-        path: '/transactions/sale',
+        path: '/transactions/sales',
       },
       {
         code: 'buy',
@@ -35,7 +35,7 @@ const mockMenuList: MenuList = [
           zh_CN: '首页',
           en_US: 'Nhập hàng',
         },
-        path: '/transactions/buy',
+        path: '/transactions/purchases',
       },
       {
         code: 'revert',
@@ -43,7 +43,7 @@ const mockMenuList: MenuList = [
           zh_CN: '首页',
           en_US: 'Trả hàng',
         },
-        path: '/transactions/revert',
+        path: '/transactions/reverts',
       },
     ],
   },
