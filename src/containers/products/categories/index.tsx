@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import { ExclamationCircleOutlined, PlusCircleOutlined } from '@ant-design/icons';
-import { Button, Modal, Space } from 'antd';
+import { Button, Modal, Space, Typography } from 'antd';
 import moment from 'moment';
 import { useState } from 'react';
 
@@ -10,6 +10,7 @@ import MyModal from '@/components/basic/modal';
 import MyTable from '@/components/core/table';
 
 const { Column } = MyTable;
+const { Title } = Typography;
 
 interface ColumnType {
   key: string;
@@ -133,6 +134,12 @@ const CategoryContainer: FC = () => {
 
   return (
     <div className="categories">
+      <Typography className="inner-text">
+        <Title level={4}>
+          {/* <LocaleFormatter id="product.category.title" /> */}
+          Quản lý danh mục
+        </Title>
+      </Typography>
       <div className="categories-header">
         <Button type="primary" icon={<PlusCircleOutlined />} onClick={handleShowCreateModal}>
           Thêm mới

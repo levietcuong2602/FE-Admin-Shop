@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import './index.less';
 
 import { ExclamationCircleOutlined, PlusCircleOutlined } from '@ant-design/icons';
-import { Button, Modal, Space } from 'antd';
+import { Button, Modal, Space, Typography } from 'antd';
 import moment from 'moment';
 import { useState } from 'react';
 
@@ -12,6 +12,7 @@ import MyModal from '@/components/basic/modal';
 import MyTable from '@/components/core/table';
 
 const { Column } = MyTable;
+const { Title } = Typography;
 
 interface ColumnType {
   key: string;
@@ -93,6 +94,12 @@ const TradeMarkedContainer: FC = () => {
 
   return (
     <div className="trademarked">
+      <Typography className="inner-text">
+        <Title level={4}>
+          {/* <LocaleFormatter id="product.native.title" /> */}
+          Quản lý thương hiệu
+        </Title>
+      </Typography>
       <div className="trademarked-header">
         <Button type="primary" icon={<PlusCircleOutlined />} onClick={handleShowCreateModal}>
           Thêm mới

@@ -1,58 +1,57 @@
 import type { FC } from 'react';
 
-import { ExclamationCircleOutlined } from '@ant-design/icons';
-import { Modal, Space } from 'antd';
-import { log } from 'console';
+import './index.less';
+
+import { CheckCircleOutlined, EditOutlined, InfoCircleOutlined, PlusCircleOutlined } from '@ant-design/icons';
+import { Button, Space, Typography } from 'antd';
+import moment from 'moment';
 
 import MyButton from '@/components/basic/button';
 import MyTable from '@/components/core/table';
 
 const { Column } = MyTable;
+const { Title } = Typography;
 
 interface ColumnType {
   key: string;
-  orderId: string;
-  productName: string;
-  unitPrice: number;
-  quantity: number;
+  transId: string;
+  supplierName: string;
+  promotion: number;
+  debt: number;
   totalAmount: number;
-  address: string;
-  description: string;
+  updatedAt: string;
   status: string;
 }
 
 const data: ColumnType[] = [
   {
     key: '1',
-    orderId: '4013197767003',
-    productName: 'Sofa CHAUMONT(NOMAD)',
-    unitPrice: 18900000,
-    quantity: 1,
+    transId: '4013197767003',
+    supplierName: 'Hoà phát',
+    promotion: 18900000,
+    debt: 1,
     totalAmount: 18900000,
-    description: '',
-    address: '44 Trần Thái Tông, Dịch Vọng, Cầu Giấy, Hà Nội',
+    updatedAt: moment().format('HH:mm DD-MM-YYY'),
     status: 'Đang giao',
   },
   {
     key: '2',
-    orderId: '4013197767005',
-    productName: 'Sofa CHAUMONT(NOMAD)',
-    unitPrice: 18900000,
-    quantity: 1,
+    transId: '4013197767005',
+    supplierName: 'Hoà phát',
+    promotion: 18900000,
+    debt: 1,
     totalAmount: 18900000,
-    address: '44 Trần Thái Tông, Dịch Vọng, Cầu Giấy, Hà Nội',
-    description: '',
+    updatedAt: moment().format('HH:mm DD-MM-YYY'),
     status: 'Đang giao',
   },
   {
     key: '3',
-    orderId: '4013197767005',
-    productName: 'Sofa CHAUMONT(NOMAD)',
-    unitPrice: 18900000,
-    quantity: 1,
+    transId: '4013197767005',
+    supplierName: 'Hoà phát',
+    promotion: 18900000,
+    debt: 1,
     totalAmount: 18900000,
-    address: '44 Trần Thái Tông, Dịch Vọng, Cầu Giấy, Hà Nội',
-    description: '',
+    updatedAt: moment().format('HH:mm DD-MM-YYY'),
     status: 'Đang giao',
   },
 ];
@@ -60,77 +59,49 @@ const data: ColumnType[] = [
 new Array(30).fill(undefined).forEach((item, index) => {
   data.push({
     key: index + 4 + '',
-    orderId: `${4013197767005 + index}`,
-    productName: 'Sofa' + index,
-    unitPrice: 18900000,
-    quantity: 1,
+    transId: `${4013197767005 + index}`,
+    supplierName: 'Sofa' + index,
+    promotion: 18900000,
+    debt: 1,
     totalAmount: 18900000,
-    address: 'Sidney No. 1 Lake Park' + index,
-    description: '',
+    updatedAt: moment().format('HH:mm DD-MM-YYY'),
     status: 'Đang giao',
   });
 });
 
 const PurchasePage: FC = () => {
-  const [confirmModal, contextHolderConfirmPayment] = Modal.useModal();
-  const [removeModal, contextHolderRemovePayment] = Modal.useModal();
-
-  const handleShowConfirmAcceptPayment = () => {
-    confirmModal.confirm({
-      title: 'Xác nhận',
-      icon: <ExclamationCircleOutlined />,
-      content: 'Xác nhận thanh toán đơn hàng?',
-      okText: 'Xác nhận',
-      cancelText: 'Huỷ',
-      onOk() {
-        console.log('OK');
-      },
-      onCancel() {
-        console.log('Cancel');
-      },
-    });
-  };
-
-  const handleShowConfirmRemovePayment = () => {
-    removeModal.confirm({
-      title: 'Xác nhận',
-      icon: <ExclamationCircleOutlined />,
-      content: 'Xác nhận huỷ đơn hàng?',
-      okText: 'Xác nhận',
-      cancelText: 'Huỷ',
-      onOk() {
-        console.log('OK');
-      },
-      onCancel() {
-        console.log('Cancel');
-      },
-    });
-  };
+  const handleCreatePurchaseTransaction = () => {};
 
   return (
-    <div className="aaa">
+    <div className="purchase">
+      <Typography className="inner-text">
+        <Title level={4}>
+          {/* <LocaleFormatter id="order.sale.title" /> */}
+          Hoá đơn nhập hàng
+        </Title>
+      </Typography>
+      <div className="purchase-header">
+        <Button type="primary" icon={<PlusCircleOutlined />} onClick={handleCreatePurchaseTransaction}>
+          Tạo hoá đơn
+        </Button>
+      </div>
       <MyTable<ColumnType> dataSource={data} rowKey={record => record.key} height="100%">
-        <Column title="Mã đơn hàng" dataIndex="orderId" key="orderId" />
-        <Column title="Tên sản phẩm" dataIndex="productName" key="productName" />
-        <Column title="Đơn giá" dataIndex="unitPrice" key="unitPrice" />
-        <Column title="Số lượng" dataIndex="quantity" key="quantity" width="75px" />
-        <Column title="Tổng tiền" dataIndex="totalAmount" key="totalAmount" />
-        <Column title="Địa chỉ" dataIndex="address" key="address" />
-        <Column title="Mô tả" dataIndex="description" key="description" width="100px" />
-        <Column title="Trạng thái" dataIndex="status" key="status" />
+        <Column title="Hoá đơn" dataIndex="transId" key="transId" width="10%" />
+        <Column title="Nhà cung cấp" dataIndex="supplierName" key="supplierName" width="15%" />
+        <Column title="Giá trị" dataIndex="totalAmount" key="totalAmount" width="10%" />
+        <Column title="Khuyến mại" dataIndex="promotion" key="promotion" width="10%" />
+        <Column title="Công nợ" dataIndex="debt" key="debt" width="10%" />
+        <Column title="Cập nhật" dataIndex="updatedAt" key="updatedAt" width="15%" />
+        <Column title="Trạng thái" dataIndex="status" key="status" width="15%" />
         <Column
           title="Hành động"
           key="action"
+          align="center"
           render={(text, record: any) => (
             <Space size="middle">
-              <MyButton type="text" onClick={handleShowConfirmAcceptPayment}>
-                Xác nhận thanh toán
-              </MyButton>
-              {contextHolderConfirmPayment}
-              <MyButton type="text" onClick={handleShowConfirmRemovePayment}>
-                Huỷ
-              </MyButton>
-              {contextHolderRemovePayment}
+              <MyButton type="text" icon={<CheckCircleOutlined />}></MyButton>
+              <MyButton type="text" icon={<EditOutlined />}></MyButton>
+              <MyButton type="text" icon={<InfoCircleOutlined />}></MyButton>
             </Space>
           )}
         />

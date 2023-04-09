@@ -84,7 +84,7 @@ const mockMenuList: MenuList = [
         code: 'natives',
         label: {
           zh_CN: '404',
-          en_US: 'Nguồn gốc',
+          en_US: 'Xuất xứ',
         },
         path: '/products/natives',
       },

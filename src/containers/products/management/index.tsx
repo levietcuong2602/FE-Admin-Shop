@@ -3,14 +3,16 @@ import type { FC } from 'react';
 import './index.less';
 
 import { ExclamationCircleOutlined, PlusCircleOutlined } from '@ant-design/icons';
-import { Button, Input, Modal, Select, Space } from 'antd';
+import { Button, Input, Modal, Select, Space, Typography } from 'antd';
 import { useState } from 'react';
 
 import MyButton from '@/components/basic/button';
 import MyModal from '@/components/basic/modal';
 import MyTable from '@/components/core/table';
+import { LocaleFormatter } from '@/locales';
 
 const { Column } = MyTable;
+const { Title } = Typography;
 
 interface ColumnType {
   key: string;
@@ -104,6 +106,12 @@ const ManagementContainer: FC = () => {
 
   return (
     <div className="management">
+      <Typography className="inner-text">
+        <Title level={4}>
+          {/* <LocaleFormatter id="product.management.title" /> */}
+          Quản lý sản phẩm
+        </Title>
+      </Typography>
       <div className="management-header">
         <div className="management-search">
           <Input className="product-id-search" placeholder="Mã sản phẩm" />
