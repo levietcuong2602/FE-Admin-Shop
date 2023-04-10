@@ -50,6 +50,12 @@ const TransactionRevertPage = lazy(
   () => import(/* webpackChunkName: "transactions/reverts" */ '@/pages/transactions/revert'),
 );
 
+const PartnerCustomerPage = lazy(
+  () => import(/* webpackChunkName: "partners/customers" */ '@/pages/partners/customer'),
+);
+const PartnerSupplierPage = lazy(
+  () => import(/* webpackChunkName: "partners/suppliers" */ '@/pages/partners/supplier'),
+);
 const routeList: RouteObject[] = [
   {
     path: '/login',
@@ -94,6 +100,14 @@ const routeList: RouteObject[] = [
       {
         path: 'products/categories',
         element: <WrapperRouteComponent element={<ProductCategoryPage />} titleId="title.products.categories" />,
+      },
+      {
+        path: 'partners/customers',
+        element: <WrapperRouteComponent element={<PartnerCustomerPage />} titleId="title.partners.customers" />,
+      },
+      {
+        path: 'partners/suppliers',
+        element: <WrapperRouteComponent element={<PartnerSupplierPage />} titleId="title.partners.suppliers" />,
       },
       {
         path: 'documentation',
