@@ -91,13 +91,31 @@ const mockMenuList: MenuList = [
     ],
   },
   {
-    code: 'customer',
+    code: 'partner',
     label: {
       zh_CN: '文档',
-      en_US: 'Khách hàng',
+      en_US: 'Đối tác',
     },
     icon: 'customer',
-    path: '/customers',
+    path: '/partners',
+    children: [
+      {
+        code: 'customers',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'Khách hàng',
+        },
+        path: '/partners/customers',
+      },
+      {
+        code: 'suppliers',
+        label: {
+          zh_CN: '404',
+          en_US: 'Nhà cung cấp',
+        },
+        path: '/partners/suppliers',
+      },
+    ],
   },
 ];
 
