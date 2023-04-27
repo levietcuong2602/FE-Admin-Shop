@@ -1,5 +1,7 @@
 import type { FC } from 'react';
 
+import './index.less';
+
 import { ExclamationCircleOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import { Button, Modal, Space, Typography } from 'antd';
 import moment from 'moment';
@@ -8,6 +10,9 @@ import { useState } from 'react';
 import MyButton from '@/components/basic/button';
 import MyModal from '@/components/basic/modal';
 import MyTable from '@/components/core/table';
+
+import CreateCategoryForm from './create-form';
+import UpdateCategoryForm from './update-form';
 
 const { Column } = MyTable;
 const { Title } = Typography;
@@ -167,15 +172,19 @@ const CategoryContainer: FC = () => {
       </MyTable>
 
       {/* Modal place */}
-      <MyModal title="Tạo mới danh mục" open={isCreateModalOpen} onOk={handleOkCreate} onCancel={handleCancelCreate}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+      <MyModal
+        centered={true}
+        title="Tạo mới danh mục"
+        open={isCreateModalOpen}
+        onOk={handleOkCreate}
+        onCancel={handleCancelCreate}
+        okText="Tạo mới"
+        cancelText="Huỷ"
+      >
+        <CreateCategoryForm />
       </MyModal>
       <MyModal title="Cập nhật danh mục" open={isUpdateModalOpen} onOk={handleOkUpdate} onCancel={handleCancelUpdate}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <UpdateCategoryForm />
       </MyModal>
       {deleteContextHolder}
     </div>

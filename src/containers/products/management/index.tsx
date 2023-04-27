@@ -11,6 +11,9 @@ import MyModal from '@/components/basic/modal';
 import MyTable from '@/components/core/table';
 import { LocaleFormatter } from '@/locales';
 
+import CreateManagementForm from './create-form';
+import UpdateManagementForm from './update-form';
+
 const { Column } = MyTable;
 const { Title } = Typography;
 
@@ -78,6 +81,7 @@ new Array(30).fill(undefined).forEach((item, index) => {
 
 const ManagementContainer: FC = () => {
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+  const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
   const [deleteConfirm, deleteContextHolder] = Modal.useModal();
 
   const handleChangeCategorySearch = () => {};
@@ -86,12 +90,24 @@ const ManagementContainer: FC = () => {
     setIsCreateModalOpen(true);
   };
 
+  const handleShowUpdateModal = () => {
+    setIsUpdateModalOpen(true);
+  };
+
   const handleOkCreate = () => {
     setIsCreateModalOpen(false);
   };
 
   const handleCancelCreate = () => {
     setIsCreateModalOpen(false);
+  };
+
+  const handleOkUpdate = () => {
+    setIsUpdateModalOpen(true);
+  };
+
+  const handleCancelUpdate = () => {
+    setIsUpdateModalOpen(false);
   };
 
   const handleShowDeleteItemConfirm = () => {
@@ -146,7 +162,9 @@ const ManagementContainer: FC = () => {
           align="center"
           render={(text, record: any) => (
             <Space size="middle">
-              <MyButton type="text">Sửa</MyButton>
+              <MyButton type="text" onClick={handleShowUpdateModal}>
+                Sửa
+              </MyButton>
               <MyButton type="text" onClick={handleShowDeleteItemConfirm}>
                 Xoá
               </MyButton>
@@ -155,10 +173,11 @@ const ManagementContainer: FC = () => {
         />
       </MyTable>
       {/* Modal place */}
-      <MyModal title="Tạo mới xuất xứ" open={isCreateModalOpen} onOk={handleOkCreate} onCancel={handleCancelCreate}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+      <MyModal title="Tạo mới sản phẩm" open={isCreateModalOpen} onOk={handleOkCreate} onCancel={handleCancelCreate}>
+        <CreateManagementForm />
+      </MyModal>
+      <MyModal title="Cập nhật sản phẩm" open={isUpdateModalOpen} onOk={handleOkUpdate} onCancel={handleCancelUpdate}>
+        <UpdateManagementForm />
       </MyModal>
       {deleteContextHolder}
     </div>

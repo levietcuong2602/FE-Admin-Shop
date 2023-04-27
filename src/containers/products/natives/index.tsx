@@ -11,6 +11,9 @@ import MyButton from '@/components/basic/button';
 import MyModal from '@/components/basic/modal';
 import MyTable from '@/components/core/table';
 
+import CreateNativeForm from './create-form';
+import UpdateNativeForm from './update-form';
+
 const { Column } = MyTable;
 const { Title } = Typography;
 
@@ -132,9 +135,7 @@ const NativeContainer: FC = () => {
         onOk={handleOkCreateNative}
         onCancel={handleCancelCreateNative}
       >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <CreateNativeForm />
       </MyModal>
       <MyModal
         title="Cập nhật xuất xứ"
@@ -142,9 +143,7 @@ const NativeContainer: FC = () => {
         onOk={handleOkUpdateNative}
         onCancel={handleCancelUpdateNative}
       >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <UpdateNativeForm />
       </MyModal>
       {deleteContextHolder}
     </div>

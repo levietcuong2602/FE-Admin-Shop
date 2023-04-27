@@ -11,6 +11,9 @@ import MyButton from '@/components/basic/button';
 import MyModal from '@/components/basic/modal';
 import MyTable from '@/components/core/table';
 
+import CreateTradeMarketForm from './create-form';
+import UpdateTradeMarketForm from './update-form';
+
 const { Column } = MyTable;
 const { Title } = Typography;
 
@@ -128,9 +131,7 @@ const TradeMarkedContainer: FC = () => {
 
       {/* Modal place */}
       <MyModal title="Tạo mới thương hiệu" open={isCreateModalOpen} onOk={handleOkCreate} onCancel={handleCancelCreate}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <CreateTradeMarketForm />
       </MyModal>
       <MyModal
         title="Cập nhật thương hiệu"
@@ -138,9 +139,7 @@ const TradeMarkedContainer: FC = () => {
         onOk={handleOkUpdate}
         onCancel={handleCancelUpdate}
       >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <UpdateTradeMarketForm />
       </MyModal>
       {deleteContextHolder}
     </div>
