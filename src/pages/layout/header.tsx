@@ -11,6 +11,7 @@ import { ReactComponent as EnUsSvg } from '@/assets/header/en_US.svg';
 import { ReactComponent as LanguageSvg } from '@/assets/header/language.svg';
 import { ReactComponent as MoonSvg } from '@/assets/header/moon.svg';
 import { ReactComponent as SunSvg } from '@/assets/header/sun.svg';
+import { ReactComponent as ViVNSvg } from '@/assets/header/vi_VN.svg';
 import { ReactComponent as ZhCnSvg } from '@/assets/header/zh_CN.svg';
 import AntdSvg from '@/assets/logo/antd.svg';
 import ReactSvg from '@/assets/logo/react.svg';
@@ -102,6 +103,12 @@ const HeaderComponent: FC<HeaderProps> = ({ collapsed, toggle }) => {
             menu={{
               onClick: info => selectLocale(info),
               items: [
+                {
+                  key: 'vi_VN',
+                  icon: <ViVNSvg />,
+                  disabled: locale === 'vi_VN',
+                  label: '简体中文',
+                },
                 {
                   key: 'zh_CN',
                   icon: <ZhCnSvg />,

@@ -8,6 +8,7 @@ const mockMenuList: MenuList = [
     label: {
       zh_CN: '首页',
       en_US: 'Tổng quan',
+      vi_VN: 'Tổng quan',
     },
     icon: 'dashboard',
     path: '/dashboard',
@@ -17,6 +18,7 @@ const mockMenuList: MenuList = [
     label: {
       zh_CN: '首页',
       en_US: 'Giao dịch',
+      vi_VN: 'Giao dịch',
     },
     icon: 'transaction',
     path: '/transactions',
@@ -26,6 +28,7 @@ const mockMenuList: MenuList = [
         label: {
           zh_CN: '路由权限',
           en_US: 'Bán hàng',
+          vi_VN: 'Bán hàng',
         },
         path: '/transactions/sales',
       },
@@ -34,6 +37,7 @@ const mockMenuList: MenuList = [
         label: {
           zh_CN: '首页',
           en_US: 'Nhập hàng',
+          vi_VN: 'Nhập hàng',
         },
         path: '/transactions/purchases',
       },
@@ -42,6 +46,7 @@ const mockMenuList: MenuList = [
         label: {
           zh_CN: '首页',
           en_US: 'Trả hàng',
+          vi_VN: 'Trả hàng',
         },
         path: '/transactions/reverts',
       },
@@ -52,6 +57,7 @@ const mockMenuList: MenuList = [
     label: {
       zh_CN: '首页',
       en_US: 'Sản phẩm',
+      vi_VN: 'Sản phẩm',
     },
     icon: 'product',
     path: '/products',
@@ -61,6 +67,7 @@ const mockMenuList: MenuList = [
         label: {
           zh_CN: '路由权限',
           en_US: 'Quản lý sản phẩm',
+          vi_VN: 'Quản lý sản phẩm',
         },
         path: '/products/management',
       },
@@ -69,6 +76,7 @@ const mockMenuList: MenuList = [
         label: {
           zh_CN: '404',
           en_US: 'Danh mục sản phẩm',
+          vi_VN: 'Danh mục sản phẩm',
         },
         path: '/products/categories',
       },
@@ -77,6 +85,7 @@ const mockMenuList: MenuList = [
         label: {
           zh_CN: '404',
           en_US: 'Thương hiệu',
+          vi_VN: 'Thương hiệu',
         },
         path: '/products/trademarked',
       },
@@ -85,6 +94,7 @@ const mockMenuList: MenuList = [
         label: {
           zh_CN: '404',
           en_US: 'Xuất xứ',
+          vi_VN: 'Xuất xứ',
         },
         path: '/products/natives',
       },
@@ -95,6 +105,7 @@ const mockMenuList: MenuList = [
     label: {
       zh_CN: '文档',
       en_US: 'Đối tác',
+      vi_VN: 'Đối tác',
     },
     icon: 'customer',
     path: '/partners',
@@ -104,6 +115,7 @@ const mockMenuList: MenuList = [
         label: {
           zh_CN: '路由权限',
           en_US: 'Khách hàng',
+          vi_VN: 'Khách hàng',
         },
         path: '/partners/customers',
       },
@@ -112,6 +124,7 @@ const mockMenuList: MenuList = [
         label: {
           zh_CN: '404',
           en_US: 'Nhà cung cấp',
+          vi_VN: 'Nhà cung cấp',
         },
         path: '/partners/suppliers',
       },

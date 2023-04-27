@@ -1,0 +1,17 @@
+export const viVN_dashboard = {
+  'app.dashboard.overview.totalSales': 'Tổng doanh thu',
+  'app.dashboard.overview.visits': 'Lượt ghé thăm',
+  'app.dashboard.overview.payments': 'Thanh toán',
+  'app.dashboard.overview.operationalEffect': 'Hiệu quả hoạt động',
+  'app.dashboard.overview.wowChange': 'WoW Change',
+  'app.dashboard.overview.dodChange': 'DoD Change',
+  'app.dashboard.overview.dailySales': 'Lượt bán trong ngày',
+  'app.dashboard.overview.visits.dailyVisits': 'Daily Visits',
+  'app.dashboard.overview.conversionRate': 'Tỷ lệ chuyển đổi',
+  'app.dashboard.salePercent.proportionOfSales': 'Tỷ lệ bán hàng',
+  'app.dashboard.salePercent.all': 'All',
+  'app.dashboard.salePercent.online': 'Online',
+  'app.dashboard.salePercent.offline': 'Offline',
+  'app.dashboard.timeline.traffic': 'Traffic',
+  'app.dashboard.timeline.payments': 'Payments',
+};
