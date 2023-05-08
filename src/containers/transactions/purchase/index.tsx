@@ -5,9 +5,11 @@ import './index.less';
 import { CheckCircleOutlined, EditOutlined, InfoCircleOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import { Button, Space, Typography } from 'antd';
 import moment from 'moment';
+import { useNavigate } from 'react-router-dom';
 
 import MyButton from '@/components/basic/button';
 import MyTable from '@/components/core/table';
+import { ROUTE } from '@/constants/router';
 
 const { Column } = MyTable;
 const { Title } = Typography;
@@ -70,7 +72,11 @@ new Array(30).fill(undefined).forEach((item, index) => {
 });
 
 const PurchasePage: FC = () => {
-  const handleCreatePurchaseTransaction = () => {};
+  const navigate = useNavigate();
+
+  const handleCreatePurchaseTransaction = () => {
+    navigate(ROUTE.CREATE_PURCHASE);
+  };
 
   return (
     <div className="purchase">

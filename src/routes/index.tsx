@@ -8,6 +8,8 @@ import { useRoutes } from 'react-router-dom';
 import Dashboard from '@/pages/dashboard';
 import LayoutPage from '@/pages/layout';
 import LoginPage from '@/pages/login';
+import CreateFormPurchasePage from '@/pages/transactions/create-purchase';
+import CreateFormSalePage from '@/pages/transactions/create-sale';
 
 import WrapperRouteComponent from './config';
 
@@ -78,8 +80,18 @@ const routeList: RouteObject[] = [
         element: <WrapperRouteComponent element={<TransactionSalePage />} titleId="title.transactions.sales" />,
       },
       {
+        path: 'transactions/sales/create',
+        element: <WrapperRouteComponent element={<CreateFormSalePage />} titleId="title.transactions.sales.create" />,
+      },
+      {
         path: 'transactions/purchases',
         element: <WrapperRouteComponent element={<TransactionPurchasePage />} titleId="title.transactions.purchases" />,
+      },
+      {
+        path: 'transactions/purchases/create',
+        element: (
+          <WrapperRouteComponent element={<CreateFormPurchasePage />} titleId="title.transactions.purchases.create" />
+        ),
       },
       {
         path: 'transactions/reverts',

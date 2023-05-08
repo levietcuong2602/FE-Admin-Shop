@@ -5,10 +5,12 @@ import './index.less';
 import { CheckCircleOutlined, EditOutlined, InfoCircleOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import { Button, Modal, Space, Typography } from 'antd';
 import moment from 'moment';
+import { useNavigate } from 'react-router-dom';
 
 import MyButton from '@/components/basic/button';
 import MyModal from '@/components/basic/modal';
 import MyTable from '@/components/core/table';
+import { ROUTE } from '@/constants/router';
 
 const { Column } = MyTable;
 const { Title } = Typography;
@@ -68,7 +70,11 @@ const data: ColumnType[] = [
 ];
 
 const SaleContainer: FC = () => {
-  const handleCreateSaleTransaction = () => {};
+  const navigate = useNavigate();
+
+  const handleCreateSaleTransaction = () => {
+    navigate(ROUTE.CREATE_SALES);
+  };
 
   return (
     <div className="sale">
