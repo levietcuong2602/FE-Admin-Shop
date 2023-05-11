@@ -4,13 +4,12 @@ import { message as $message } from 'antd';
 import axios from 'axios';
 
 // import { history } from '@/routes/history';
-import { API_URL } from '@/configs';
 import store from '@/stores';
 import { setGlobalState } from '@/stores/global.store';
 
 const axiosInstance = axios.create({
   timeout: 6000,
-  baseURL: `${API_URL}/api/v1`,
+  baseURL: '/api',
   responseType: 'json',
 });
 
@@ -70,7 +69,7 @@ axiosInstance.interceptors.response.use(
     return {
       status: false,
       message: errorMessage,
-      result: null,
+      data: null,
     };
   },
 );
@@ -78,7 +77,7 @@ axiosInstance.interceptors.response.use(
 export type Response<T = any> = {
   status: boolean;
   message: string;
-  result: T;
+  data: T;
 };
 
 export type MyResponse<T = any> = Promise<Response<T>>;

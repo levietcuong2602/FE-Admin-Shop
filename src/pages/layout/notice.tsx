@@ -30,7 +30,7 @@ const HeaderNoticeComponent: FC = () => {
   // and sets loading flag in-process
   const getNotice = async () => {
     setLoading(true);
-    const { status, result } = await getNoticeList();
+    const { status, data: result } = await getNoticeList();
 
     setLoading(false);
     status && setNoticeList(result);

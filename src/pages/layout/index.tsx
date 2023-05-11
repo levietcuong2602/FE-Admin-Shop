@@ -65,7 +65,9 @@ const LayoutPage: FC = () => {
   };
 
   const fetchMenuList = useCallback(async () => {
-    const { status, result } = await getMenuList();
+    const { status, data: result } = await getMenuList();
+
+    console.log({ result });
 
     if (status) {
       setMenuList(result);
