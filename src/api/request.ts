@@ -3,12 +3,15 @@ import type { AxiosRequestConfig, Method } from 'axios';
 import { message as $message } from 'antd';
 import axios from 'axios';
 
+// import { history } from '@/routes/history';
+import { API_URL } from '@/configs';
 import store from '@/stores';
 import { setGlobalState } from '@/stores/global.store';
-// import { history } from '@/routes/history';
 
 const axiosInstance = axios.create({
   timeout: 6000,
+  baseURL: `${API_URL}/api/v1`,
+  responseType: 'json',
 });
 
 axiosInstance.interceptors.request.use(

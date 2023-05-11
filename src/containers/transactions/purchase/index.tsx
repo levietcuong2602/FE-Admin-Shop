@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 import MyButton from '@/components/basic/button';
 import MyTable from '@/components/core/table';
-import { ROUTE } from '@/constants/router';
+import { ROUTES } from '@/constants/routes';
 
 const { Column } = MyTable;
 const { Title } = Typography;
@@ -75,7 +75,7 @@ const PurchasePage: FC = () => {
   const navigate = useNavigate();
 
   const handleCreatePurchaseTransaction = () => {
-    navigate(ROUTE.CREATE_PURCHASE);
+    navigate(ROUTES.CREATE_PURCHASE);
   };
 
   return (

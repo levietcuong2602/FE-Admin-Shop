@@ -10,7 +10,7 @@ export const loginAsync = createAsyncAction<LoginParams, boolean>(payload => {
     const { result, status } = await apiLogin(payload);
 
     if (status) {
-      localStorage.setItem('t', result.token);
+      localStorage.setItem('t', result.access_token);
       localStorage.setItem('username', result.username);
       dispatch(
         setUserItem({

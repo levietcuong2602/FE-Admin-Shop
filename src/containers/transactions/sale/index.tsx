@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import MyButton from '@/components/basic/button';
 import MyModal from '@/components/basic/modal';
 import MyTable from '@/components/core/table';
-import { ROUTE } from '@/constants/router';
+import { ROUTES } from '@/constants/routes';
 
 const { Column } = MyTable;
 const { Title } = Typography;
@@ -73,7 +73,7 @@ const SaleContainer: FC = () => {
   const navigate = useNavigate();
 
   const handleCreateSaleTransaction = () => {
-    navigate(ROUTE.CREATE_SALES);
+    navigate(ROUTES.CREATE_SALES);
   };
 
   return (

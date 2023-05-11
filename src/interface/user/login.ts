@@ -10,7 +10,7 @@ export interface LoginParams {
 
 export interface LoginResult {
   /** auth token */
-  token: string;
+  access_token: string;
   username: string;
   role: Role;
 }

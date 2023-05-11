@@ -13,3 +13,9 @@ export interface PageData<T> {
   total: number;
   data: T[];
 }
+
+export interface ResponseData {
+  data: any;
+  status: number;
+  code?: number;
+}
